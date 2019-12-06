@@ -21,7 +21,8 @@ jobs:
         run: git --version
       - name: node
         run: node -v
-      - uses: JamesIves/github-pages-deploy-action@master
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@master
         env:
          ACCESS_TOKEN: ${{secrets.ations}}
          BRANCH: gh-pages
