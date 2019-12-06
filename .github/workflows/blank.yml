@@ -14,14 +14,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: ls
-        run: ls
-      - name: cpu
-        run: cat /proc/cpuinfo
-      - name: git
-        run: git --version
-      - name: node
-        run: node -v
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
