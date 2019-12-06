@@ -8,13 +8,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: package
-        run: |
-          ls
-          ls -l
+      - name: ls
+        run: ls
+      - name: cpu
+        run: cat /proc/cpuinfo
