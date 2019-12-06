@@ -24,7 +24,7 @@ jobs:
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@master
         env:
-         ACCESS_TOKEN: ${{secrets.ations}}
+         ACCESS_TOKEN: ${{secrets.efsf}}
          BRANCH: gh-pages
          FOLDER: dist
          BUILD_SCRIPT: npm install && npm run build
