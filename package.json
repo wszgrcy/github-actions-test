@@ -1,6 +1,7 @@
 {
   "name": "github-actions",
   "version": "0.0.0",
+  "homepage": "https://wszgrcy.github.io/github-actions-test",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
