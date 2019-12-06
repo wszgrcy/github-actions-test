@@ -19,3 +19,5 @@ jobs:
         run: cat /proc/cpuinfo
       - name: git
         run: git --version
+      - name: env 
+        run: echo ${{secrets.ations}}
