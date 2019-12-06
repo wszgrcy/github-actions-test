@@ -19,13 +19,11 @@ jobs:
         run: cat /proc/cpuinfo
       - name: git
         run: git --version
-      - name: env
-        run: echo ${{secrets.ations}}
       - name: node
         run: node -v
       - uses: JamesIves/github-pages-deploy-action@master
         env:
-         ACCESS_TOKEN: ${{ secrets.ations }}
+         ACCESS_TOKEN: ${{secrets.ations}}
          BRANCH: gh-pages
          FOLDER: dist
          BUILD_SCRIPT: npm install && npm run build
