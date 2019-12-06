@@ -23,7 +23,6 @@ jobs:
         run: echo ${{secrets.ations}}
       - name: node
         run: node -v
-      - name: 构建部署
       - uses: JamesIves/github-pages-deploy-action@master
         env:
          ACCESS_TOKEN: ${{ secrets.ations }}
