@@ -12,14 +12,21 @@ jobs:
           fetch-depth: 1
       - uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 12.x
       - name: ls
         run: ls
       - name: cpu
         run: cat /proc/cpuinfo
       - name: git
         run: git --version
-      - name: env 
+      - name: env
         run: echo ${{secrets.ations}}
       - name: node
         run: node -v
+      - name: 构建部署
+      - uses: JamesIves/github-pages-deploy-action@master
+        env:
+         ACCESS_TOKEN: ${{ secrets.ations }}
+         BRANCH: gh-pages
+         FOLDER: dist
+         BUILD_SCRIPT: npm install && npm run build
