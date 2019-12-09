@@ -20,6 +20,7 @@ jobs:
         run: |
           git clone ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           cd github-actions-test
+          ls -l
       # - uses: actions/checkout@v2-beta
       #   with:
       #     token: ${{ secrets.ACCESS_TOKEN }}
@@ -27,30 +28,14 @@ jobs:
         with:
           node-version: 12.x
       - name: build
-
         run: |
-          pwd
+          ls -l
           cd github-actions-test
-          # git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
-          # echo $GITHUB_REPOSITORY
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
           npm i
           npm run build
-          ls -l
-
-          # git config --system --list
-          # git config --global  --list
-          # git config --local  --list
-          # touch test123
-          # git add -A
-          # git status
-          # git commit -m 'test'
-          # ls -l
-
           cp -rp dist/github-actions/ ../dist
-          echo '查看文件夹'
-          ls ../dist -l
           git branch gh-pages
           git checkout gh-pages
           rm -rf *
@@ -59,5 +44,4 @@ jobs:
           git add -A
           git commit -m '页面构建'
           git push -f "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
-          ls -l
           # git pull
