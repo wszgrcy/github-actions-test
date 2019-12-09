@@ -19,6 +19,7 @@ jobs:
           PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/wszgrcy/github-actions-test.git
         run: |
           echo $GITHUB_REPOSITORY
+          set
           npm i
           ls -l
           npm run build
@@ -31,5 +32,6 @@ jobs:
           git checkout gh-pages
           ls -l
           # git pull
+
 
 
