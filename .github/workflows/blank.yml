@@ -16,9 +16,10 @@ jobs:
           node-version: 12.x
       - name: build
         env:
-          PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/wszgrcy/github-actions-test.git
+          REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git
+
         run: |
-          echo $GITHUB_REPOSITORY
+          # echo $GITHUB_REPOSITORY
           set
           npm i
           ls -l
@@ -26,7 +27,7 @@ jobs:
           ls -l
           git config --global user.name "wszgrcy"
           git config --global user.email "wszgrcy@gmail.com"
-          git push --force ${PATH} :gh-pages
+          git push --force ${REPOSITORY_PATH} :gh-pages
           git branch -d gh-pages
           git branch gh-pages
           git checkout gh-pages
