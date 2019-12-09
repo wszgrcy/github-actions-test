@@ -20,6 +20,7 @@ jobs:
           REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
 
         run: |
+          git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           # echo $GITHUB_REPOSITORY
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
@@ -36,6 +37,7 @@ jobs:
           git status
           git commit -m 'test'
           ls -l
+
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master
           # git branch -d gh-pages
           # git branch gh-pages
