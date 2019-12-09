@@ -18,11 +18,11 @@ jobs:
         env:
           PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/wszgrcy/github-actions-test.git
         run: |
+          env
           npm i
           ls -l
           npm run build
           ls -l
-          env
           git config --global user.name "wszgrcy"
           git config --global user.email "wszgrcy@gmail.com"
           git push --force ${PATH} :gh-pages
