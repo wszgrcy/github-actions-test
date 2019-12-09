@@ -16,7 +16,7 @@ jobs:
           node-version: 12.x
       - name: build
         env:
-          REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git
+          REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/$GITHUB_REPOSITORY.git
 
         run: |
           # echo $GITHUB_REPOSITORY
