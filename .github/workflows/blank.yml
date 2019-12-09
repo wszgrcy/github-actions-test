@@ -34,7 +34,8 @@ jobs:
           cp -rp dist/github-actions/ ../dist
           git branch gh-pages
           git checkout gh-pages
-          git pull --rebase ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git gh-pages
+          # git pull --rebase ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git gh-pages
+          git reset --hard origin/gh-pages
           rm -rf *
           cp -rp ../dist/* .
           git status
