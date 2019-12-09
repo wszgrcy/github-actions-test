@@ -48,7 +48,8 @@ jobs:
           # git commit -m 'test'
           # ls -l
 
-          cp -rp dist/ ../dist
+          cp -rp dist/github-actions/ ../dist
+          echo '查看文件夹'
           ls ../dist -l
           git branch gh-pages
           git checkout gh-pages
