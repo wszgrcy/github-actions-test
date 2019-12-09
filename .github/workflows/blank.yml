@@ -20,6 +20,8 @@ jobs:
           ls -l
           npm run build
           ls -l
+          git config --global user.name "wszgrcy"
+          git config --global user.email "wszgrcy@gmail.com"
           git push origin :gh-pages
           git pull
 
