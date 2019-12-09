@@ -32,8 +32,8 @@ jobs:
           git config --global  --list
           git config --local  --list
           touch test
-          git status
           git add -A
+          git status
           git commit -m 'test'
           ls -l
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
