@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -31,6 +32,9 @@ jobs:
           git config --global  --list
           git config --local  --list
           touch test
+          git status
+          git commit -m 'test'
+          git add -A
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
           # git branch -d gh-pages
           # git branch gh-pages
