@@ -48,11 +48,12 @@ jobs:
           # git commit -m 'test'
           # ls -l
 
-          cp -r dist ../dist
+          cp -rp dist/ ../dist
+          ls ../dist -l
           git branch gh-pages
           git checkout gh-pages
           rm -rf *
-          cp -r ../dist/* .
+          cp -rp ../dist/* .
           git status
           git add -A
           git commit -m '页面构建'
