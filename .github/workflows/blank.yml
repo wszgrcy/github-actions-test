@@ -33,8 +33,9 @@ jobs:
           git config --local  --list
           touch test
           git status
-          git commit -m 'test'
           git add -A
+          git commit -m 'test'
+          ls -l
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
           # git branch -d gh-pages
           # git branch gh-pages
