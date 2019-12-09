@@ -25,12 +25,12 @@ jobs:
           ls -l
           npm run build
           ls -l
-          git config --global user.name "wszgrcy"
+          git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "wszgrcy@gmail.com"
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git :gh-pages
-          git branch -d gh-pages
-          git branch gh-pages
-          git checkout gh-pages
+          # git branch -d gh-pages
+          # git branch gh-pages
+          # git checkout gh-pages
           ls -l
           # git pull
 
