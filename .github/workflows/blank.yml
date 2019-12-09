@@ -48,12 +48,14 @@ jobs:
           # git commit -m 'test'
           # ls -l
 
-          git branch -d gh-pages
+          cp -r dist ../dist
           git branch gh-pages
           git checkout gh-pages
-          cp -r dist ../dist
-          git push -f "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
           rm -rf *
           cp ../dist ./
+          git status
+          git add -A
+          git commit -m '页面构建'
+          git push -f "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
           ls -l
           # git pull
