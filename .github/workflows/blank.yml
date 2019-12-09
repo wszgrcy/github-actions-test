@@ -19,5 +19,6 @@ jobs:
           npm i
           ls -l
           npm run build
+          ls -l
 
 
