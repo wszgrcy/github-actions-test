@@ -22,7 +22,8 @@ jobs:
       # - uses: actions/checkout@v2-beta
       #   with:
       #     token: ${{ secrets.ACCESS_TOKEN }}
-      - uses: actions/setup-node@v1
+      - name: install
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: build
@@ -33,7 +34,7 @@ jobs:
           cp -rp dist/github-actions/ ../dist
           git branch gh-pages
           git checkout gh-pages
-          git pull
+          git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           rm -rf *
           cp -rp ../dist/* .
           git status
