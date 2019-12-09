@@ -29,6 +29,8 @@ jobs:
           REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
 
         run: |
+          pwd
+          cd github-actions-test
           # git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           # echo $GITHUB_REPOSITORY
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
