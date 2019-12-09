@@ -14,9 +14,13 @@ jobs:
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@gmail.com"
-      - uses: actions/checkout@v2-beta
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: git
+        run: |
+          git clone https://github.com/${GITHUB_REPOSITORY}.git
+          cd github-actions-test
+      # - uses: actions/checkout@v2-beta
+      #   with:
+      #     token: ${{ secrets.ACCESS_TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
