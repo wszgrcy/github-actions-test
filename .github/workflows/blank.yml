@@ -16,15 +16,20 @@ jobs:
           node-version: 12.x
       - name: build
         env:
-          TOKEN: https://${{secrets.ACCESS_TOKEN}}@github.com/${{GITHUB_REPOSITORY}}.git
+          PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/wszgrcy/github-actions-test.git
         run: |
           npm i
           ls -l
           npm run build
           ls -l
+          env
           git config --global user.name "wszgrcy"
           git config --global user.email "wszgrcy@gmail.com"
-          git push --force ${TOKEN} :gh-pages
-          git pull
+          git push --force ${PATH} :gh-pages
+          git branch -d gh-pages
+          git branch gh-pages
+          git checkout gh-pages
+          ls -l
+          # git pull
 
 
