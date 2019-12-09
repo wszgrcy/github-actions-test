@@ -5,8 +5,8 @@ on:
     branches:
       - master
 env:
-  REPOSITORY_PATH: https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/
-  GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
+  REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
+  # GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
 jobs:
   build:
     runs-on: ubuntu-latest
