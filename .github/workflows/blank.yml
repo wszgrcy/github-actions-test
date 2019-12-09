@@ -23,7 +23,6 @@ jobs:
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
           npm i
-          ls -l
           # npm run build
           ls -l
           git config --global user.name "${GITHUB_ACTOR}"
@@ -31,7 +30,7 @@ jobs:
           git config --system --list
           git config --global  --list
           git config --local  --list
-          git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
+          git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
           # git branch -d gh-pages
           # git branch gh-pages
           # git checkout gh-pages
