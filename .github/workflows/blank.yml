@@ -36,21 +36,24 @@ jobs:
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
           npm i
-          # npm run build
+          npm run build
           ls -l
 
-          git config --system --list
-          git config --global  --list
-          git config --local  --list
-          touch test123
-          git add -A
-          git status
-          git commit -m 'test'
-          ls -l
+          # git config --system --list
+          # git config --global  --list
+          # git config --local  --list
+          # touch test123
+          # git add -A
+          # git status
+          # git commit -m 'test'
+          # ls -l
 
-          git push "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" master
-          # git branch -d gh-pages
-          # git branch gh-pages
-          # git checkout gh-pages
+          git branch -d gh-pages
+          git branch gh-pages
+          git checkout gh-pages
+          cp -r dist ../dist
+          git push -f "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
+          rm -rf *
+          cp ../dist ./
           ls -l
           # git pull
