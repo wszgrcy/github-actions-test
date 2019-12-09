@@ -14,13 +14,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
-          BASE_BRANCH: master
-          BUILD_SCRIPT: npm install && npm run build
+      - name: build
+        run: |
+          npm i
+          ls -l
+          npm run build
+
 
