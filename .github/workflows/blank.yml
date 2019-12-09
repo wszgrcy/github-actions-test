@@ -20,10 +20,11 @@ jobs:
 
         run: |
           # echo $GITHUB_REPOSITORY
+          echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
           npm i
           ls -l
-          npm run build
+          # npm run build
           ls -l
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "wszgrcy@gmail.com"
