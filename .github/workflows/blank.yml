@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - master
-
+env:
+  REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +17,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@gmail.com"
       - name: git
         run: |
-          git clone https://github.com/${GITHUB_REPOSITORY}.git
+          git clone ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           cd github-actions-test
       # - uses: actions/checkout@v2-beta
       #   with:
@@ -25,8 +26,6 @@ jobs:
         with:
           node-version: 12.x
       - name: build
-        env:
-          REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
 
         run: |
           pwd
@@ -48,7 +47,7 @@ jobs:
           git commit -m 'test'
           ls -l
 
-          git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master
+          git push  ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master
           # git branch -d gh-pages
           # git branch gh-pages
           # git checkout gh-pages
