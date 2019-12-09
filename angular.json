@@ -23,7 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "deployUrl": "/github-actions-test/",
+            "baseHref":"/github-actions-test/",
             "assets": [
               "src/favicon.ico",
               "src/assets"
