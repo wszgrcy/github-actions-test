@@ -36,7 +36,7 @@ jobs:
           git status
           git commit -m 'test'
           ls -l
-          git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
+          git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master
           # git branch -d gh-pages
           # git branch gh-pages
           # git checkout gh-pages
