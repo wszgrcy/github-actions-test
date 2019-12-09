@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-
+      - uses: actions/checkout@v2-beta
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -20,7 +21,7 @@ jobs:
           REPOSITORY_PATH: https://${{secrets.ACCESS_TOKEN}}@github.com/
 
         run: |
-          git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
+          # git pull ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           # echo $GITHUB_REPOSITORY
           echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
           set
@@ -44,6 +45,3 @@ jobs:
           # git checkout gh-pages
           ls -l
           # git pull
-
-
-
