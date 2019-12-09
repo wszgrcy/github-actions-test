@@ -30,6 +30,7 @@ jobs:
           git config --system --list
           git config --global  --list
           git config --local  --list
+          touch test
           git push --force ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git master:master
           # git branch -d gh-pages
           # git branch gh-pages
