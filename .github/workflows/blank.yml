@@ -33,6 +33,7 @@ jobs:
           cp -rp dist/github-actions/ ../dist
           git branch gh-pages
           git checkout gh-pages
+          git pull
           rm -rf *
           cp -rp ../dist/* .
           git status
