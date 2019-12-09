@@ -20,5 +20,7 @@ jobs:
           ls -l
           npm run build
           ls -l
+          git push origin :gh-pages
+          git pull
 
 
