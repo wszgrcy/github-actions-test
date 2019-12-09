@@ -19,8 +19,6 @@ jobs:
       - name: git
         run: |
           git clone ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
-          cd github-actions-test
-          ls -l
       # - uses: actions/checkout@v2-beta
       #   with:
       #     token: ${{ secrets.ACCESS_TOKEN }}
@@ -29,10 +27,7 @@ jobs:
           node-version: 12.x
       - name: build
         run: |
-          ls -l
           cd github-actions-test
-          echo ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
-          set
           npm i
           npm run build
           cp -rp dist/github-actions/ ../dist
@@ -43,5 +38,5 @@ jobs:
           git status
           git add -A
           git commit -m '页面构建'
-          git push -f "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
+          git push "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
           # git pull
