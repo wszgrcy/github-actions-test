@@ -23,7 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "baseHref":"/github-actions-test/",
+            "baseHref": "/github-actions-test/",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -88,7 +88,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "watch": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -97,6 +96,13 @@
               "src/styles.scss"
             ],
             "scripts": []
+          },
+          "configurations": {
+            "ci": {
+              "watch": true,
+              "progress": false,
+              "browsers": "ChromeHeadlessCI"
+            }
           }
         },
         "lint": {
