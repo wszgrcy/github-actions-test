@@ -26,6 +26,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: test
+        run: |
+          npm run test
       - name: build
         run: |
           cd github-actions-test
@@ -35,11 +38,11 @@ jobs:
           git branch gh-pages
           git checkout gh-pages
           # git pull --rebase ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git gh-pages
-          git reset --hard origin/gh-pages
+          # git reset --hard origin/gh-pages
           rm -rf *
           cp -rp ../dist/* .
           git status
           git add -A
           git commit -m '页面构建'
-          git push "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
+          git push --force "${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git" gh-pages
           # git pull
