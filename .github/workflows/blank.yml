@@ -26,13 +26,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: install-dependencies
+        run: |
+          cd github-actions-test
+          npm i
       - name: test
         run: |
+          cd github-actions-test
           npm run test
       - name: build
         run: |
           cd github-actions-test
-          npm i
+          # npm i
           npm run build
           cp -rp dist/github-actions/ ../dist
           git branch gh-pages
