@@ -100,7 +100,7 @@
           "configurations": {
             "ci": {
               "karmaConfig": "karma.conf.ci.js",
-              "watch": true,
+              "watch": false,
               "progress": false,
               "browsers": "ChromeHeadlessCI"
             }
