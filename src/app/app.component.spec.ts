@@ -31,5 +31,8 @@ describe('AppComponent', () => {
   it('document can use?', () => {
     expect(document).toBeTruthy();
     expect(document.querySelector).toBeTruthy();
+    expect(
+      document.querySelector('div') instanceof HTMLDivElement
+    ).toBeTruthy();
   });
 });
