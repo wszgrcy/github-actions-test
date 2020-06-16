@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test --configuration ci",
     "lint": "ng lint",
-    "e2e": "ng e2e --configuration ci"
+    "e2e": "ng e2e --configuration ci",
+    "update": "ng update --all --force"
   },
   "private": true,
   "dependencies": {
