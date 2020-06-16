@@ -16,9 +16,11 @@ jobs:
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@gmail.com"
-      - name: git
-        run: |
-          git clone ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
+      - name: pull-code
+        uses: actions/checkout@v2
+      # - name: git
+      #   run: |
+      #     git clone ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git
       # - uses: actions/checkout@v2-beta
       #   with:
       #     token: ${{ secrets.ACCESS_TOKEN }}
@@ -28,19 +30,19 @@ jobs:
           node-version: 12.x
       - name: install-dependencies
         run: |
-          cd github-actions-test
+# cd github-actions-test
           npm i
       - name: unit-test
         run: |
-          cd github-actions-test
+# cd github-actions-test
           npm run test
       - name: e2e-test
         run: |
-          cd github-actions-test
+# cd github-actions-test
           npm run e2e
       - name: build
         run: |
-          cd github-actions-test
+#cd github-actions-test
           # npm i
           npm run build
           cp -rp dist/github-actions/ ../dist
