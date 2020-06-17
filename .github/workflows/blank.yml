@@ -30,26 +30,19 @@ jobs:
           node-version: 12.x
       - name: install-dependencies
         run: |
-# cd github-actions-test
           npm i
       - name: unit-test
         run: |
-# cd github-actions-test
           npm run test
       - name: e2e-test
         run: |
-# cd github-actions-test
           npm run e2e
       - name: build
         run: |
-#cd github-actions-test
-          # npm i
           npm run build
           cp -rp dist/github-actions/ ../dist
           git branch gh-pages
           git checkout gh-pages
-          # git pull --rebase ${REPOSITORY_PATH}${GITHUB_REPOSITORY}.git gh-pages
-          # git reset --hard origin/gh-pages
           rm -rf *
           cp -rp ../dist/* .
           git status
